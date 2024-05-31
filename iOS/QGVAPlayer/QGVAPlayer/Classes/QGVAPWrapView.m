@@ -48,6 +48,7 @@
 - (void)initVAPViewIfNeed {
     if (!_vapView) {
         _vapView = [[VAPView alloc] initWithFrame:self.bounds];
+        _vapView.hwd_enterBackgroundOP = HWDMP4EBOperationTypeDoNothing;
         [self addSubview:_vapView];
     }
 }
