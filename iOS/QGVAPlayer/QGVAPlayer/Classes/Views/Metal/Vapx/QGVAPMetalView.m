@@ -99,11 +99,11 @@
 
 - (void)display:(CVPixelBufferRef)pixelBuffer mergeInfos:(NSArray<QGVAPMergedInfo *> *)infos {
     
-    if (!self.window) {
-        VAP_Event(kQGVAPModuleCommon, @"quit display pixelbuffer, cuz window is nil!");
-        [self onMetalViewUnavailable];
-        return ;
-    }
+    // if (!self.window) {
+    //     VAP_Event(kQGVAPModuleCommon, @"quit display pixelbuffer, cuz window is nil!");
+    //     [self onMetalViewUnavailable];
+    //     return ;
+    // }
     if (self.drawableSizeShouldUpdate) {
         CGFloat nativeScale = [UIScreen mainScreen].nativeScale;
         CGSize drawableSize = CGSizeMake(CGRectGetWidth(self.bounds)*nativeScale, CGRectGetHeight(self.bounds)*nativeScale);
