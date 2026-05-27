@@ -14,7 +14,14 @@
 // limitations under the License.
 
 #import <UIKit/UIKit.h>
+
+// SPM 把 QGVAPlayer.h 当 umbrella header, 这里 re-export 所有 public header
 #import "UIView+VAP.h"
+#import "QGVAPWrapView.h"
+#import "VAPMacros.h"
+#import "QGVAPLogger.h"
+#import "QGHWDShaderTypes.h"
+#import "QGVAPMaskInfo.h"
 
 //! Project version number for QGVAPlayer.
 FOUNDATION_EXPORT double QGVAPlayerVersionNumber;
