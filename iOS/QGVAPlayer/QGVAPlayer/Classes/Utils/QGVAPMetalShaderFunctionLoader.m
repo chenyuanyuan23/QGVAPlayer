@@ -58,7 +58,13 @@
     if (self.defaultLibrary || _alreadyLoadDefaultLibrary) {
         return ;
     }
+    // 兼容 SPM / CocoaPods：SPM 编译 .metal 生成的 default.metallib 在嵌套资源 bundle，
+    // 需用 SWIFTPM_MODULE_BUNDLE；CocoaPods 保持 bundleForClass。
+#if SWIFT_PACKAGE
+    NSBundle *bundle = SWIFTPM_MODULE_BUNDLE;
+#else
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
+#endif
     NSString *metalLibPath = [bundle pathForResource:@"default" ofType:@"metallib"];
     if (metalLibPath.length == 0) {
         return ;
